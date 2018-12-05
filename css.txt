@@ -1,0 +1,582 @@
+from PIL import Image
+import argparse
+
+parser = argparser.Argumentpaser()
+
+parser.add_argument('file')
+parser.add_argument('-o', '--output')
+parser.add_argument('--width', type=int, default=80)
+parser.add_argument('---height', type=int, default=80)
+
+args = parserr.parse_args()
+
+IMG=args.file
+WIDTH=args.width
+HEIGHT=args.height
+OUTPUT=args.output
+
+ascii_char=list("$@B%8&WM#*oahkbdqwmzo0QLCJUYXzcvvunxrjft/\|()1{}[]?\"^''.")
+
+def get_char(r,g,b,alpha=256):
+ 	if alpha==0:
+ 		return''
+    lenght= len(ascii_char)
+    gray=int(0.2126*r+0.7152*g+0.0722*b)
+    return ascii_char[int(gray/unit)]
+if __name__=='__main__':
+ 	im =Image.open()
+ 	im=im.resize((WIDTH,HEIGHT), Image.NEAREST)
+
+ 	txt=""
+ 	for i in range(HEIGHT):
+ 		for j in range(WIDTH):
+ 			txt +=get_char(*im.getpixel((j,i)))
+ 	    txt +='\n'
+
+ 	print(txt)
+
+ 	if OUTPUT:
+ 	 	with open(OUTPUT, 'w')as f:
+ 	 	 	f.write(txt)
+ 	else:
+ 	 	with open("output.txt", 'w')as f:
+ 	 	 	f.write(txt)
+
+
+def genFib():
+	fibn_1=1
+	fibn_2=0
+	while True:
+		next=fibn_1 +fibn_2
+		yield next
+		fibn_2=fibn_1
+		fibn_1=next
+
+
+import datetime
+class Person（boject):
+	def __init__(self, name)
+	self.name=name
+	self.birthday=None
+	self.lastName=name.splut('')[-1]
+
+	def getlastName(self):
+		return self.lastName
+
+    def __str__():
+    	return self.name
+
+
+x=25
+e=0.01
+low=0.0
+high=0.0
+a=(high+low)/2
+whie abs(a**2-x)>=e:
+    if a**2>x:
+    	high=a
+    if a**2<x:
+    	low=a:
+    a=(high+low)/2
+
+
+<!DOCTYPE HTML>
+<html>
+<body>
+
+<video src="movie.ogg" width="320" height="240" controls="controls">
+  <source src="movie.ogg" type="video/ogg">
+  <source src="movie.mp4" type="video/mp4"> 
+your browser does not suppert the video tag.
+</video>
+
+</body>
+</html>
+<a href  ="http://www.w3school.com.cn">shit</a>
+
+1.HTML 指的是？
+您的回答：超文本标记语言（Hyper Text Markup Language）
+
+2.Web 标准的制定者是？
+您的回答：万维网联盟（W3C）
+
+3.在下列的 HTML 中，哪个是最大的标题？
+您的回答：<head>
+
+正确答案：<h1>
+
+4.在下列的 HTML 中，哪个可以插入折行？
+您的回答：<br>
+
+5.在下列的 HTML 中，哪个可以添加背景颜色？
+您的回答：<body bgcolor="yellow">
+
+6.请选择产生粗体字的 HTML 标签：
+您的回答：<bold>
+
+正确答案：<b>
+
+7.请选择产生斜体字的 HTML 标签：
+您的回答：<italics>
+
+正确答案：<i>
+
+8.在下列的 HTML 中，哪个可以产生超链接？
+您的回答：<a href="http://www.w3school.com.cn">W3School</a>
+
+9.如何制作电子邮件链接？
+您的回答：<mail>xxx@yyy</mail>
+
+正确答案：<a href="mailto:xxx@yyy">
+
+10.如何在新窗口打开链接？
+您的回答：<a href="url" target="new">
+
+正确答案：<a href="url" target="_blank">
+
+11.以下选项中，哪个全部都是表格标签？
+您的回答：<table><tr><td>
+
+12.请选择可以使单元格中的内容进行左对齐的正确 HTML 标签：
+您的回答：<td align="left">
+
+13.如何产生带有数字列表符号的列表？
+您的回答：<list>
+
+正确答案：<ol>
+
+14.如何产生带有圆点列表符号的列表？
+你的回答：无
+
+15.在下列的 HTML 中，哪个可以产生复选框？
+您的回答：<input type="checkbox">
+
+16.在下列的 HTML 中，哪个可以产生文本框？
+您的回答：<input type="textfield">
+
+正确答案：<input type="text">
+
+17.在下列的 HTML 中，哪个可以产生下拉列表？
+您的回答：<input type="dropdown">
+
+正确答案：<select>
+
+18.在下列的 HTML 中，哪个可以产生文本区（textarea）？
+您的回答：<input type="textarea">
+
+正确答案：<textarea>
+
+19.在下列的 HTML 中，哪个可以插入图像？
+您的回答：<img>image.gif</img>
+
+正确答案：<img src="image.gif">
+
+20.在下列的 HTML 中，哪个可以插入背景图像？
+您的回答：<background img="background.gif">
+
+正确答案：<body background="background.gif">
+ 
+
+<table border="1"> #tr行 td内容
+<tr>
+<td>row 1, cell 1</td>
+<td>row 1, cell 2</td>
+</tr>
+<tr>
+<td>row 2, cell 1</td>
+<td>row 2, cell 2</td>
+</table>
+
+
+<code>	定义计算机代码文本
+<kbd>	定义键盘文本
+<samp>	定义计算机代码示例
+<var>	定义变量
+<pre>	定义预格式化文本
+
+<frameset cols="25%,75%">
+   <frame src="frame_a.htm">
+   <frame src="frame_b.htm">
+</frameset>
+
+
+<iframe src="URL"></iframe>
+<iframe src="demo_iframe.htm" name="iframe_a"></iframe>
+<p><a href="htpp://www.w3school.com.cn" target="iframe_a"w3</a></p>
+
+
+<head> 元素是所有头部元素的容器。<head> 内的元素可包含脚本，指示浏览器在何处可以找到样式表，提供元信息，等等。
+
+以下标签都可以添加到 head 部分：<title>、<base>、<link>、<meta>、<script> 以及 <style>。
+
+ http://www.w3school.com.cn/html/index.asp，遵守以下的语法规则：
+
+scheme://host.domain:port/path/filename
+
+
+1.CSS 指的是？
+您的回答：Cascading Style Sheets
+
+2.在以下的 HTML 中，哪个是正确引用外部样式表的方法？
+您的回答：<link rel="stylesheet" type="text/css" href="mystyle.css">
+
+3.在 HTML 文档中，引用外部样式表的正确位置是？
+您的回答：<head> 部分
+
+4.哪个 HTML 标签用于定义内部样式表？
+您的回答：<style>
+
+5.哪个 HTML 属性可用来定义内联样式？
+您的回答：style
+
+6.下列哪个选项的 CSS 语法是正确的？
+您的回答：body {color: black}
+
+7.如何在 CSS 文件中插入注释？
+您的回答：// this is a comment
+
+正确答案：/* this is a comment */
+
+8.哪个属性可用于改变背景颜色？
+您的回答：background-color:
+
+9.如何为所有的 <h1> 元素添加背景颜色？
+您的回答：h1 {background-color:#FFFFFF}
+
+10.如何改变某个元素的文本颜色？
+您的回答：fgcolor:
+
+正确答案：color:
+
+11.哪个 CSS 属性可控制文本的尺寸？
+你的回答：无
+
+12.在以下的 CSS 中，可使所有 <p> 元素变为粗体的正确语法是？
+您的回答：p {text-size:bold}
+
+正确答案：p {font-weight:bold}
+
+13.如何显示没有下划线的超链接？
+您的回答：a {text-decoration:none}
+
+14.如何使文本以大写字母开头？
+您的回答：text-transform:capitalize
+
+15.如何改变元素的字体？
+您的回答：font-family:
+
+16.如何使文本变为粗体？
+您的回答：font:b
+
+正确答案：font-weight:bold
+
+17.如何显示这样一个边框：上边框 10 像素、下边框 5 像素、左边框 20 像素、右边框 1 像素？
+您的回答：border-width:10px 5px 20px 1px
+
+正确答案：border-width:10px 1px 5px 20px
+
+18.如何改变元素的左边距？
+您的回答：margin-left:
+
+19.请判断以下说法是否正确：如需定义元素内容与边框间的空间，可使用 padding 属性，并可使用负值？
+您的回答：正确
+
+正确答案：错误
+
+20.如何产生带有正方形项目的列表？
+您的回答：list-style-type: square
+
+
+seletor {declaration1; delaration2;}
+h1 {color:red; font-size:14px;}
+h1, h2, h3, h4, h5{
+	color: green;
+    }
+
+body{
+font-fanmily: verdana, sans-serif;
+}
+
+td, ul, ol, ul, li, dl, dt, dd  {
+     font-family: Verdana, sans-serif;
+     }
+
+p  {
+     font-family: Times, "Times New Roman", serif;
+     }
+
+ li strong{
+     font-style: italic;
+     font-weight: normal;
+ }
+
+ id 选择器
+id 选择器可以为标有特定 id 的 HTML 元素指定特定的样式。
+
+id 选择器以 "#" 来定义
+
+
+.center {text-align: center}
+
+<h1 class="center">
+this heading will be center-aligned
+</h1>
+
+.fancy td {
+	color: #f60;
+	background: #666;
+	}
+
+[title]
+{
+	color:red;
+}
+
+
+选择器	描述
+[attribute]	用于选取带有指定属性的元素。
+[attribute=value]	用于选取带有指定属性和值的元素。
+[attribute~=value]	用于选取属性值中包含指定词汇的元素。
+[attribute|=value]	用于选取带有以指定值开头的属性值的元素，该值必须是整个单词。
+[attribute^=value]	匹配属性值以指定值开头的每个元素。
+[attribute$=value]	匹配属性值以指定值结尾的每个元素。
+[attribute*=value]	匹配属性值中包含指定值的每个元素。
+
+
+外部样式表
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+</head>
+
+hr {color: sienna;}
+p{margin-left: 20px;}
+body{background-image:url("image/back40.gif");}
+
+
+内部样式表
+<head>
+<style type="text/css">
+   hr{color: sienna;}
+   p{margin-left: 20px;}
+   body {background-image: url(image/back40.gif);}
+</style>
+</head>
+
+<style type="text/css">
+body{background-color: yellow}
+hi{background-color: green}
+h2{background-color: transparent}
+p {background-color: gray; padding:20px}
+
+</style>
+</head>
+<body>
+<h1>qq</h1>
+<h2>aa</h2>
+<p>oo</p>
+<p   ss="no2">qwer</p>
+</body>
+</html>
+
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css" />
+</hesd>
+
+<head>
+<style type="text/css">
+   hr{color: sienna;}
+   p{margin-left: 20px;}
+   body{background-image: url("image/back40.gif");}
+   </style>
+   </head>
+
+
+ CSS 背景属性
+属性	描述
+background	简写属性，作用是将背景属性设置在一个声明中。
+background-attachment	背景图像是否固定或者随着页面的其余部分滚动。
+background-color	设置元素的背景颜色。
+background-image	把图像设置为背景。
+background-position	设置背景图像的起始位置。
+background-repeat	设置背景图像是否及如何重复。
+
+body {background-color: red}
+body
+{ 
+background-image: url('/i/eg_bg_03.gif');
+background-repeat: no-repeat;
+background-attachment:fixed;
+background-position: 30% 20%; 或者(50px 100px)
+}
+
+属性	描述
+color	设置文本颜色
+direction	设置文本方向。 rtl ltr
+line-height	设置行高。 p.small {line-height: 90%}
+letter-spacing	设置字符间距。 h1 {letter-spacing: -0.5em}
+wrod-spacing h1{wrod-spacing:1cm}
+text-align	对齐元素中的文本。
+text-decoration	向文本添加修饰。
+underline overline line-through
+text-indent	缩进元素中文本的首行。
+text-shadow	设置文本阴影。CSS2 包含该属性，但是 CSS2.1 没有保留该属性。
+text-transform	控制元素中的字母。
+unicode-bidi	设置文本方向。
+white-space	设置元素中空白的处理方式。
+p
+{
+white-space: nowrap  
+}
+值	空白符	换行符	自动换行
+pre-line	合并	保留	允许
+normal	合并	忽略	允许
+nowrap	合并	忽略	不允许
+pre	保留	保留	不允许
+pre-wrap	保留	保留	允许
+
+
+font	简写属性。作用是把所有针对字体的属性设置在一个声明中。
+font-family	设置字体系列。
+font-size	设置字体的尺寸。  h1 {font-size: 300%}
+font-style	设置字体风格。
+font-variant	以小型大写字体或者正常字体显示文本。
+font-weight	设置字体的粗细。
+
+a:link      (普通的 未被访问的lianjie)
+a:visited   (用户已访问的链接)
+a:hover     (鼠标指针位于链接的上方)
+a.active    (url被点击的时刻)
+
+a:link,a:visited
+{
+display:block;
+font-weight:bold;
+font-size:14px;
+font-family:Verdana, Arial, Helvetica, sans-serif;
+color:#FFFFFF;
+background-color:#98bf21;
+width:120px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+}
+
+a:hover,a:active
+{
+background-color:#7A991A;
+} 
+
+
+list-style	简写属性。用于把所有用于列表的属性设置于一个声明中。
+list-style-image	将图象设置为列表项标志。url()
+list-style-position	设置列表中列表项标志的位置。(inside  outside)
+list-style-type	设置列表项标志的类型。(point square)
+ul 
+{
+list-style: square inside url('/i/eg_arrow.gif')
+}
+
+
+table,th,td
+{
+border:1px solid blue;
+}
+
+table, td, th 
+  {
+  border:1px solid black;
+  }
+th
+  {
+   padding:15px;
+   text-align:left;     控制表格中内容与边框的距离
+  }
+td
+  {
+  padding:15px;
+  }
+
+
+  border-collapse	设置是否把表格边框合并为单一的边框。
+border-spacing	设置分隔单元格边框的距离。
+caption-side	设置表格标题的位置。
+empty-cells	设置是否显示表格中的空单元格。
+table-layout	设置显示单元、行和列的算法。
+
+
+属性	描述	CSS
+outline	在一个声明中设置所有的轮廓属性。
+outline-color	设置轮廓的颜色。	
+outline-style	设置轮廓的样式。	
+outline-width	设置轮廓的宽度。	
+
+p 
+{
+border:red solid thin;
+outline-style:dotted;   #outline:#1234aa dotted thick;
+outline-color:#00ff00;
+}
+
+
+属性	描述
+padding	简写属性。作用是在一个声明中设置元素的所内边距属性。
+padding-bottom	设置元素的下内边距。
+padding-left	设置元素的左内边距。
+padding-right	设置元素的右内边距。
+padding-top	设置元素的上内边距。
+
+元素的边框 (border) 是围绕元素内容和内边距的一条或多条线。
+
+CSS border 属性允许你规定元素边框的样式、宽度和颜色。
+p.three
+{
+border-style: solid;
+border-width: 5px 10px(上 左 下 右)
+}
+
+围绕在元素边框的空白区域是外边距。设置外边距会在元素外创建额外的“空白”。
+
+设置外边距的最简单的方法就是使用 margin 属性，这个属性接受任何长度单位、百分数值甚至负值。
+
+如果缺少左外边距的值，则使用右外边距的值。
+如果缺少下外边距的值，则使用上外边距的值。
+如果缺少右外边距的值，则使用上外边距的值。
+p {margin: 20px 30px 30px 20px;}
+
+属性	描述
+position	把元素放置到一个静态的、相对的、绝对的、或固定的位置中。
+top	定义了一个定位元素的上外边距边界与其包含块上边界之间的偏移。
+right	定义了定位元素右外边距边界与其包含块右边界之间的偏移。
+bottom	定义了定位元素下外边距边界与其包含块下边界之间的偏移。
+left	定义了定位元素左外边距边界与其包含块左边界之间的偏移。
+overflow	设置当元素的内容溢出其区域时发生的事情。
+clip	设置元素的形状。元素被剪入这个形状之中，然后显示出来。
+vertical-align	设置元素的垂直对齐方式。
+z-index	设置元素的堆叠顺序。
+
+div
+{
+background-color:#00ffff;
+width:150px;      #滚动条显示元素内溢出内容
+height:150px;
+overflow:scroll;
+}
+ul
+{
+folat:left;
+width:100%;
+padding:0;
+margin:0;
+list-style-type:none;
+}
+a
+{
+float:left;
+width:7em;
+text-decoration:none;
+color:white;
+background-color:purple;
+padding:0.2em 0.6em;
+border-right:1px solid white;
+}
+a.hover {background-color:red}
