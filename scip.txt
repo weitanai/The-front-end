@@ -1,0 +1,281 @@
+我们在第一章集中讨论计算过程和函数在程序设计中的作用。
+我们了解了如何使用基本数据(数字)和基本操作(算术)，如何通过组合和控制形成复合函数，
+以及如何通过给进程命名来创建功能抽象。
+我们还看到，高阶函数通过使我们能够根据一般的计算方法来操作，
+从而推理，从而增强了我们语言的能力。这就是编程的本质。
+
+
+本章着重于数据。我们在这里研究的技术将允许我们表示和操作关于许多不同领域的信息。
+由于互联网的爆炸式发展，大量的结构化信息在网上对我们所有人都是免费的，
+计算可以应用于各种各样的问题。有效使用内置和用户定义的数据类型是数据处理应用程序的基础。
+
+我们已经看到抽象在帮助我们处理大型系统的复杂性方面是多么重要。
+有效的程序设计还需要组织原则来指导我们制定程序的总体设计。
+特别是，我们需要一些策略来帮助我们将大型系统构建为模块化的，
+这意味着它们可以自然地划分为可单独开发和维护的一致部分。
+
+
+创建模块化程序的一种强大技术是合并可能随时间改变状态的数据。
+通过这种方式，单个数据对象可以表示独立于程序其余部分发展的内容。
+一个不断变化的物体的行为可能会受到它的历史的影响，就像世界上的一个实体一样。
+向数据添加状态是一种称为面向对象编程的范式的核心组成部分。
+
+
+Python对象系统旨在使数据抽象和消息传递既方便又灵活。类、方法、继承和点表达式的专门语法都使我们能够在程序中形式化对象隐喻，这提高了我们组织大型程序的能力。
+
+
+特别是，我们希望我们的目标系统能够促进项目不同方面之间关注点的分离。
+程序中的每个对象封装并管理程序状态的一部分，每个类语句定义实现程序整体逻辑的一部分的函数。抽象障碍加强了大型程序不同方面之间的边界。
+
+
+面向对象编程特别适合于为具有独立但交互部分的系统建模的程序。
+例如，不同的用户在社交网络中交互，不同的角色在游戏中交互，不同的形状在物理模拟中交互。
+当表示这样的系统时，程序中的对象通常会自然地映射到被建模的系统中的对象，类表示它们的类型和关系。
+
+
+另一方面，类可能不能提供实现某些抽象的最佳机制。功能抽象为表示输入和输出之间的关系提供了更自然的隐喻。
+一个人不应该觉得有必要把程序中的每一个逻辑都放在类中，尤其是在定义用于操作数据的独立函数时。函数还可以强制关注点分离。
+
+
+多范式语言(如Python)允许程序员根据适当的问题匹配组织范式。
+在软件工程中，学习识别什么时候引入一个新类，而不是引入一个新函数，以便简化或模块化一个程序，是一项重要的设计技能，值得仔细注意。
+•数据抽象
+
+•将信息和相关行为捆绑在一起
+
+一种使用分布式状态进行计算的隐喻
+
+•每个对象都有自己的本地状态
+
+•每个对象也知道如何管理自己的本地状态，
+
+基于方法调用
+
+方法调用是对象之间传递的消息
+
+•多个对象可能都是同一类型的实例
+
+•不同的类型可能相互关联
+
+专门的语法和词汇来支持这个隐喻
+
+Use rational numbers   to perform computation whole data values  
+   add_rational, mul_rational  rationals_are_equal, print_rational
+Create rationals or implement rational operations  numerators and denominators   
+   rational, numer, denom
+Implement selectors and constructor for rationals   two-element lists
+   list literals and element selection
+
+
+Iterators
+A container can provide an iterator that provides access to its elements in order
+iter(iterable):
+next(iterator):
+Return an iterator over the elementsof an iterable value
+Return the next element in an iterator
+
+Many built-in Python sequence operations return iterators that compute results lazily
+
+map(func, iterable):Iterate over func(x) for x in iterable
+filter(func, iterable):Iterate over x in iterable if func(x)
+zip(first_iter, second_iter):Iterate over co-indexed (x, y) pairs
+reversed(sequence):Iterate over x in a sequence in reverse order
+
+To view the contents of an iterator, place the resulting elements into a container
+list(iterable):Create a list containing all x in iterable
+tuple(iterable):Create a tuple containing all x in iterable
+sorted(iterable):Create a sorted list containing x in iterable
+
+
+Using getattr, we can look up an attribute using a string
+>>> getattr(tom_account, 'balance')
+10
+>>> hasattr(tom_account, 'deposit')
+True
+getattr and dot expressions look up a name in the same way
+
+Python object system:
+Functions are objects
+Bound methods are also objects: a function
+that has its first parameter "self" already
+bound to an instance
+Dot expressions evaluate to bound methods for
+class attributes that are functions
+<instance>.<method_name>
+
+Inheritance is a technique for relating classes together
+
+To look up a name in a class:
+1. If it names an attribute in the class, return the attribute value.
+2. Otherwise, look up the name in the base class, if there is one.
+
+
+Certain names are special because they have built-in behavior
+These names always start and end with two underscores
+
+__init__   Method invoked automatically when an object is constructed
+__repr__   Method invoked to display an object as a Python expression
+__add__    Method invoked to add one object to another
+__bool__   Method invoked to convert an object to True or False
+__float__  Method invoked to convert an object to a float (real number)
+
+
+set
+Membership testing: Is a value an element of a set?
+• Union: Return a set with all elements in set1 or set2
+• Intersection: Return a set with any elements in set1 and set2
+• Adjoin: Return a set with all elements in s and a value v
+
+
+有时，计算机程序的行为是非标准的
+
+•函数接收不正确类型的参数值
+
+•某些资源(如文件)不可用
+
+•数据传输过程中丢失网络连接
+
+在编程语言中声明和响应异常的一种内置机制
+
+条件
+
+Python在发生错误时引发异常
+
+异常可以由程序处理，防止解释器停止
+
+未处理的异常将导致Python停止执行并打印堆栈跟踪
+
+异常对象!它们有带构造函数的类。
+
+它们支持控制的非本地延续
+
+如果f调用g和g调用h，则异常可以将控制从h转移到f，而无需等待
+
+g返回。
+
+(异常处理往往比较慢。)
+
+TypeError -- A function was passed the wrong number/type of argument
+NameError -- A name wasn't found
+KeyError -- A key wasn't found in a dictionary
+RuntimeError -- Catch-all for troubles during interpretation
+
+Try statements handle exceptions
+try:
+ <try suite>
+except <exception class> as <name>:
+ <except suite>
+...
+Execution rule:
+The <try suite> is executed first
+If, during the course of executing the <try suite>,
+an exception is raised that is not handled otherwise, and
+If the class of the exception inherits from <exception class>, then
+The <except suite> is executed, with <name> bound to the exception
+>>> try:
+ x = 1/0
+ except ZeroDivisionError as e:
+ print('handling a', type(e))
+ x = 0
+handling a <class 'ZeroDivisionError'>
+>>> x
+0
+
+
+一种编程语言有:
+
+•句法:语言中的legal语句和表达
+
+•语义:这些语句和表达式的执行/计算规则
+
+要创建一种新的编程语言，你必须
+•规范:文档描述语言的精确语法和语义
+
+•规范实现:语言的解释器或编译器
+
+
+The way in which names are looked up in Scheme and Python is called lexical scope
+(or static scope) [You can see what names are in scope by inspecting the definition]
+Lexical scope: The parent of a frame is the environment in which a procedure was defined
+Dynamic scope: The parent of a frame is the environment in which a procedure was called
+
+Functional Programming
+All functions are pure functions
+No re-assignment and no mutable data types
+Name-value bindings are permanent
+Advantages of functional programming:
+• The value of an expression is independent of the order in which sub-expressions are
+evaluated
+• Sub-expressions can safely be evaluated in parallel or only on demand (lazily)
+• Referential transparency: The value of an expression does not change when we substitute
+one of its subexpression with the value of that subexpression
+
+
+尾递归
+
+从修改后的算法语言方案报告中:
+
+Scheme的实现必须是正确的尾递归。这允许在常数空间执行迭代计算，即使是迭代
+
+计算是用句法递归过程来描述的。
+
+(define (factorial n k)
+ (if (zero? n) k
+ (factorial (- n 1)
+ (* k n))))
+
+
+  
+宏调用表达式的求值过程:
+
+•计算运算符子表达式，该子表达式计算结果为宏
+
+•对操作数表达式调用宏过程，而不需要先求值
+
+•计算宏过程返回的表达式
+A procedure call that has not yet returned is active. Some procedure calls are tail calls.
+A Scheme interpreter should support an unbounded number of active tail calls using only a
+constant amount of space.
+A tail call is a call expression in a tail context:
+• The last body sub-expression in a lambda expression
+• Sub-expressions 2 & 3 in a tail context if expression
+• All non-predicate sub-expressions in a tail context cond
+• The last sub-expression in a tail context and, or, begin, or let
+
+
+延迟和强制实现流
+
+承诺是一种表达，同时也是评估它的环境
+
+延迟表达式创建了在当前环境中稍后计算它的承诺
+
+强制执行承诺将在定义它的环境中返回其值
+
+
+
+SQL通常被用作交互式语言
+
+select语句的结果会显示给用户，但不会存储
+
+create table语句为结果提供一个名称
+
+select语句可以使用from子句指定输入表
+
+可以使用where子句选择输入表的行子集
+
+可以使用order by子句声明剩余行的排序
+
+列描述确定如何将每个输入行投影到结果行
+
+select语句可以使用from子句指定输入表
+
+可以使用where子句选择输入表的行子集
+
+可以使用order by子句声明剩余行的排序
+
+列描述确定如何将每个输入行投影到结果行
+
+
+在选择表达式中，列名的值为行值
+
+算术表达式可以组合行值和常量
