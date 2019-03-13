@@ -1,4 +1,12 @@
-                                读书笔记
+                                about use git
+  
+  
+ create a local empty diretory : mkdir diretort-name
+ cd diretory-name
+ pwd（print working directory）用于输出当前工作目录的绝对路径
+                                
+This directory becomes a repository that Git can manage: git init
+
 
 初次提交
   git add file
@@ -38,16 +46,10 @@ cat readme.txt  读取文件
 但是要小心，你只能恢复文件到最新版本，你会丢失最近一次提交后你修改的内容。
 
 添加远程库
-阅读: 1246931
 现在的情景是，你已经在本地创建了一个Git仓库后，又想在GitHub创建一个Git仓库，并且让这两个仓库进行远程同步，
 这样，GitHub上的仓库既可以作为备份，又可以让其他人通过该仓库来协作，真是一举多得。
 
-首先，登陆GitHub，然后，在右上角找到“Create a new repo”按钮，创建一个新的仓库：
-
-
-
-在Repository name填入learngit，其他保持默认设置，点击“Create repository”按钮，就成功地创建了一个新的Git仓库：
-
+in GitHub创建一个新的仓库
 
 
 目前，在GitHub上的这个learngit仓库还是空的，GitHub告诉我们，可以从这个仓库克隆出新的仓库，
