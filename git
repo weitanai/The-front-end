@@ -1,11 +1,13 @@
                                 about use git
   
   
+  
+  
  create a local empty diretory : mkdir diretort-name
  cd diretory-name
  pwd（print working directory）用于输出当前工作目录的绝对路径
                                 
-This directory becomes a repository that Git can manage: git init
+ This directory becomes a repository that Git can manage: git init
 
 
 初次提交
