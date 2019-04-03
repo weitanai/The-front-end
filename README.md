@@ -1,2 +1,2 @@
-stay love stay death
+stay love ==> share  ==> death  
 some naive note about The front end
